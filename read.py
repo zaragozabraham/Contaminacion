@@ -33,7 +33,7 @@ def read_egresos(year: int, boxplotedad: bool, boxplotpeso: bool, boxplottalla: 
     df2 = df.replace([999,999.0,999.00], pd.NA).dropna()
     # filtrado por localidad y municipios del área metropolitana de Monterrey.
     municipios = [6, 18, 26, 31, 39, 46, 19, 48, 21]
-    df_nl = df2[df.LOC == 19]
+    df_nl = df2[df2.LOC == 19]
     df_am = df_nl[df_nl.MUNIC.isin(municipios)]
 
     if (boxplotedad):
