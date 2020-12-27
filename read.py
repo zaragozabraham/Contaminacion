@@ -3,7 +3,14 @@ import plotly.express as px
 
 def read_egresos(year: int, boxplotedad: bool, boxplotpeso: bool, boxplottalla: bool) -> pd.DataFrame:
     columns = ['LOC', 'MUNIC', 'DIAG_INI', 'EDAD', 'SEXO', 'PESO', 'TALLA']
-    # leer todos los registros del año especificado
+    '''
+    En está función requiere de tres parametos:
+    - year (int) : año de registro de egresos (2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018).
+    - boxplotedad (bool) : Su valor indica si se desea generar un boxplot por edad del registro.
+    - boxplotpeso (bool) : Su valor indica si se desea generar un boxplot por peso del registro.
+    - boxplottalla (bool) : Su valor indica si se desea generar un boxplot por talla del registro.
+    '''
+    # leer todos los registros del año especificado, 2017 es una excepción debido a que no está separado por comas.
     if (year == 2017):
         df = pd.read_csv(
             f'data/EGRESO_{year}.csv',
