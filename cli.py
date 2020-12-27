@@ -39,6 +39,4 @@ else:
 
 read_egresos(year, edad, peso, talla)
 
-print(arguments)
-
     
